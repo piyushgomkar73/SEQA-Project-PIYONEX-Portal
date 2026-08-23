@@ -1,0 +1,24 @@
+.tasks-stat-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.task-stat-card {
+  padding: 16px;
+  cursor: pointer;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.task-stat-card.active { box-shadow: var(--shadow-md); }
+
+.task-stat-value { font-size: var(--font-size-3xl); font-weight: 700; line-height: 1; }
+.task-stat-label { font-size: var(--font-size-xs); color: var(--color-gray-500); font-weight: 500; }
+
+@media (max-width: 1024px) { .tasks-stat-row { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .tasks-stat-row { grid-template-columns: 1fr 1fr; } }
