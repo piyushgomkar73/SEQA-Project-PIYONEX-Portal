@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { AppProvider } from './contexts/AppContext';
 import { ToastProvider } from './contexts/ToastContext';
@@ -46,7 +46,7 @@ export default function App() {
     <ToastProvider>
       <AuthProvider>
         <AppProvider>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               {/* Public Login Route */}
               <Route
@@ -83,7 +83,7 @@ export default function App() {
               </Route>
             </Routes>
             <ToastContainer />
-          </BrowserRouter>
+          </HashRouter>
         </AppProvider>
       </AuthProvider>
     </ToastProvider>
